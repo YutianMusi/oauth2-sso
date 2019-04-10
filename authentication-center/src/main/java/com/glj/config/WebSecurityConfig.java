@@ -30,13 +30,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/assets/**", "/css/**", "/images/**");
+        web.ignoring().antMatchers("/assets/**", "/css/**", "/images/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
+                .failureUrl("/login?error=true")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()

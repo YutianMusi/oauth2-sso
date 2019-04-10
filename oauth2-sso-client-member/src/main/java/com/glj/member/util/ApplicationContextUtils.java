@@ -1,4 +1,4 @@
-package com.cjs.example.util;
+package com.glj.member.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * @author ChengJianSheng
+ * @author gaoleijie
  * @date 2019-02-17
  */
 @Component

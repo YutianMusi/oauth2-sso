@@ -1,4 +1,4 @@
-package com.cjs.example.controller;
+package com.glj.member.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 
 /**
- * @author ChengJianSheng
+ * @author gaoleijie
  * @date 2019-03-03
  */
 @Controller
@@ -20,7 +20,6 @@ public class MemberController {
 
     @GetMapping("/list")
     public String list() {
-
         return "member/list";
     }
 
@@ -40,7 +39,6 @@ public class MemberController {
     @ResponseBody
     @PostMapping("/add")
     public String add() {
-
         return "add";
     }
 

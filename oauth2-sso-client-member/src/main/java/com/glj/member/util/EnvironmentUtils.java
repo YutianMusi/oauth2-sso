@@ -1,11 +1,11 @@
-package com.cjs.example.util;
+package com.glj.member.util;
 
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 /**
- * @author ChengJianSheng
+ * @author gaoleijie
  * @date 2019-02-17
  */
 @Component

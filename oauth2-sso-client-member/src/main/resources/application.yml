@@ -19,3 +19,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://glj:glj@127.0.0.1:2100/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}

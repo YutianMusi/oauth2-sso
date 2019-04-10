@@ -14,3 +14,4 @@ eureka:
       defaultZone: http://glj:glj@127.0.0.1:2100/eureka/
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}

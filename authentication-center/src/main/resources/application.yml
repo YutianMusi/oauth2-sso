@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/security_oauth?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=false
-    password: test
-    username: test
+    password: root
+    username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   session:
     store-type: redis
@@ -17,3 +17,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://glj:glj@127.0.0.1:2100/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}

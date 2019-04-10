@@ -12,3 +12,10 @@ security:
     resource:
       jwt:
         key-uri: http://127.0.0.1:8080/oauth/token_key
+spring:
+  application:
+    name: oauth2-sso-client-member
+eureka:
+  client:
+    service-url:
+      defaultZone: http://glj:glj@127.0.0.1:2100/eureka/

@@ -1,0 +1,16 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: api-gateway
+zuul:
+  routes:
+    api:
+      path: /api/**
+      serviceId: oauth2-sso-client-member
+eureka:
+  client:
+    service-url:
+      defaultZone: http://glj:glj@127.0.0.1:2100/eureka/
+  instance:
+    prefer-ip-address: true

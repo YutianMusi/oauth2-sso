@@ -6,6 +6,7 @@ import com.glj.entity.SysUserPo;
 import com.glj.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,7 +40,10 @@ public class MyUserDetailsService implements UserDetailsService {
             log.warn("用户{}不存在", username);
             throw new UsernameNotFoundException("【" + username + "】用户不存在！");
         }
-        log.info(passwordEncoder.encode(sysUserPo.getPassword()) + "原" + sysUserPo.getPassword());
+        if (sysUserPo.getStatus() == 0) {
+            log.warn("用户{}被冻结", username);
+            throw new LockedException("【" + username + "】用户被冻结，无法登陆！");
+        }
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         for (SysRolePo role : sysUserPo.getRolePoList()) {
             role.getPermissionPoList().stream().forEach(d -> {

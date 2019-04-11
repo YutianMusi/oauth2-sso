@@ -3,11 +3,19 @@ server:
 spring:
   application:
     name: api-gateway
+
+#Zuul
 zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
   routes:
-    api:
-      path: /api/**
+    member:
+      path: /member/**
       serviceId: oauth2-sso-client-member
+      sensitiveHeaders:
+  
+##eureka
 eureka:
   client:
     service-url:

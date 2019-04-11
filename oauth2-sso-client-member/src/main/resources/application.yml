@@ -7,11 +7,11 @@ security:
     client:
       client-id: UserManagement
       client-secret: user123
-      access-token-uri: http://127.0.0.1:8080/oauth/token
-      user-authorization-uri: http://127.0.0.1:8080/oauth/authorize
+      access-token-uri: http://172.23.23.14:8080/oauth/token
+      user-authorization-uri: http://172.23.23.14:8080/oauth/authorize
     resource:
       jwt:
-        key-uri: http://127.0.0.1:8080/oauth/token_key
+        key-uri: http://172.23.23.14:8080/oauth/token_key
 spring:
   application:
     name: oauth2-sso-client-member
@@ -20,4 +20,5 @@ eureka:
     service-url:
       defaultZone: http://glj:glj@127.0.0.1:2100/eureka/
   instance:
+    prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}

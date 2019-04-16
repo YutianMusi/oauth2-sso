@@ -14,7 +14,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-
+#eureka
 eureka:
   client:
     service-url:
@@ -22,3 +22,7 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#feign
+feign:
+  hystrix:
+    enabled: true

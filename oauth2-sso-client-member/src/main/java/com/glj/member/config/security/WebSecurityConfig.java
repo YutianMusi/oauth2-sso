@@ -1,4 +1,4 @@
-package com.glj.member.config;
+package com.glj.member.config.security;
 
 import com.glj.member.util.EnvironmentUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -15,3 +15,6 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#swagger
+swagger2:
+  enable: true

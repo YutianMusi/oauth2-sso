@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
@@ -20,10 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private EnvironmentUtils environmentUtils;
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/bootstrap/**");
-    }
+
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/layui/**");
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -31,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             http.authorizeRequests().anyRequest().permitAll();
         } else {
             http.logout().logoutSuccessUrl("http://172.23.23.14:8080/logout")
+                    .and()
+                    .formLogin().defaultSuccessUrl("/index")
                     .and()
                     .authorizeRequests()
                     .anyRequest().authenticated()

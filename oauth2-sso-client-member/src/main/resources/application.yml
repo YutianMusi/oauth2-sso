@@ -1,7 +1,7 @@
 server:
   port: 8082
-  servlet:
-    context-path: /memberSystem
+#  servlet:
+#    context-path: /memberSystem
 security:
   oauth2:
     client:
@@ -15,6 +15,17 @@ security:
 spring:
   application:
     name: oauth2-sso-client-member
+  #模板引擎配置
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+    settings:
+      template_update_delay: 0
+      classic_compatible: true
+      number_format: 0.######
+      template_exception_handler: ignore
+    request-context-attribute: rc
+    charset: UTF-8
 eureka:
   client:
     service-url:

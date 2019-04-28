@@ -1,6 +1,6 @@
 var $,tab,skyconsWeather,_$,_element;
 layui.config({
-    base: baseUrl+'/static/js/' //假设这是你存放拓展模块的根目录
+    base: '/js/' //假设这是你存放拓展模块的根目录
 }).extend({
 	bodyTab: 'bodyTab' // {/}的意思即代表采用自有路径，即不跟随 base 路径
 });

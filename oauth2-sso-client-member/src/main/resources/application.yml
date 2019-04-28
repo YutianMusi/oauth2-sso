@@ -15,6 +15,11 @@ security:
 spring:
   application:
     name: oauth2-sso-client-member
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/security_oauth?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=false
+    password: root
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   #模板引擎配置
   freemarker:
     template-loader-path: classpath:/templates/
